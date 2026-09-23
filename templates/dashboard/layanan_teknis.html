@@ -1,0 +1,228 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Layanan Teknis - SIPHP-PENI Kabupaten Subang{% endblock %}
+
+{% block content %}
+<div class="bg-white rounded-2xl shadow-sm p-6 md:p-8 border border-gray-200">
+
+  <!-- Header Halaman -->
+  <div class="mb-8 border-b border-gray-200 pb-6">
+    <div
+      class="inline-flex items-center space-x-2 bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-3 border border-emerald-100">
+      <span>📋 Layanan Publik & Administrasi</span>
+    </div>
+    <h1 class="text-2xl md:text-3xl font-extrabold text-gray-900 tracking-tight">Layanan Teknis & Persyaratan SOP</h1>
+    <p class="text-gray-600 text-xs md:text-sm mt-1">Daftar persyaratan berkas serta unduhan berkas SOP dan Formulir
+      Permohonan untuk tiap jenis layanan.</p>
+  </div>
+
+  <!-- Grid Card Layanan & Persyaratan -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+    <!-- 1. SOP Rekomendasi STPW -->
+    <div
+      class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between">
+      <div>
+        <div class="flex items-start justify-between border-b border-gray-100 pb-4 mb-4">
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-10 h-10 bg-emerald-50 text-emerald-700 rounded-lg flex items-center justify-center font-bold text-lg border border-emerald-100">
+              📋
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-gray-800">SOP Rekomendasi STPW</h3>
+              <span class="text-xs text-emerald-700 font-medium">Surat Tanda Pendaftaran Waralaba</span>
+            </div>
+          </div>
+          <span
+            class="bg-blue-50 text-blue-700 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">DOCX</span>
+        </div>
+
+        <div class="bg-slate-50 rounded-lg p-3.5 border border-slate-100 mb-4">
+          <h4 class="text-xs font-bold text-gray-700 mb-2 uppercase tracking-wide flex items-center space-x-1">
+            <span>📌</span>
+            <span>Persyaratan Berkas:</span>
+          </h4>
+          <ul class="text-xs text-gray-600 space-y-1.5 list-disc list-inside">
+            <li>Fotokopi KTP Pemohon / Penanggungjawab Perusahaan</li>
+            <li>Izin Mendirikan Bangunan / PBG</li>
+            <li>Prospektus Penawaran Waralaba</li>
+            <li>Hak Kekayaan Intelektual</li>
+            <li>Perjanjian Waralaba</li>
+            <li>Nomor Induk Berusaha (NIB)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tombol Aksi Unduh Terpisah -->
+      <div class="pt-3 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <span class="text-[11px] text-gray-400 font-medium self-start sm:self-center">Format File: .docx</span>
+        <div class="flex items-center space-x-2 w-full sm:w-auto">
+          <!-- Unduh SOP -->
+          <a href="{% static 'doc/SOP_Rekomendasi_STPW.docx' %}" download
+            class="flex-1 sm:flex-none inline-flex items-center justify-center space-x-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 px-3.5 py-2 rounded-lg text-xs font-semibold transition border border-gray-300">
+            <span>📄</span>
+            <span>Unduh SOP</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. SOP Rekomendasi TDG -->
+    <div
+      class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between">
+      <div>
+        <div class="flex items-start justify-between border-b border-gray-100 pb-4 mb-4">
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-10 h-10 bg-emerald-50 text-emerald-700 rounded-lg flex items-center justify-center font-bold text-lg border border-emerald-100">
+              🏢
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-gray-800">SOP Rekomendasi TDG</h3>
+              <span class="text-xs text-emerald-700 font-medium">Tanda Daftar Gudang</span>
+            </div>
+          </div>
+          <span
+            class="bg-blue-50 text-blue-700 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">DOCX</span>
+        </div>
+
+        <div class="bg-slate-50 rounded-lg p-3.5 border border-slate-100 mb-4">
+          <h4 class="text-xs font-bold text-gray-700 mb-2 uppercase tracking-wide flex items-center space-x-1">
+            <span>📌</span>
+            <span>Persyaratan Berkas:</span>
+          </h4>
+          <ul class="text-xs text-gray-600 space-y-1.5 list-disc list-inside">
+            <li>Foto copy Surat Ijin Usaha Perdagangan (SIUP)</li>
+            <li>Foto copy Nomor Induk Berusaha (NIB) dengan KBLI yang sesuai</li>
+            <li>Foto copy Kartu Tanda Penduduk (KTP) pemilik yang masih berlaku</li>
+            <li>Foto copy Nomor Pokok Wajib Pajak (NPWP)</li>
+            <li>Apabila tanah dan/atau bangunan bukan miliknya dilampiri perjanjian pemanfaatan bangunan</li>
+            <li>Foto copy Ijin Mendirikan Bangunan (IMB) dengan menunjukan aslinya</li>
+            <li>Peta lokasi/alamat bangunan gudang lengkap dan titik koordinat Gudang</li>
+            <li>Data teknis luas dan kapasitas penyimpanan gudang</li>
+            <li>Akta Pendirian dan Perubahan beserta pengesahannya</li>
+            <li>Foto copy SLF</li>
+            <li>Foto copy Izin Prinsip untuk Gudang PMA</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tombol Aksi Unduh Terpisah -->
+      <div class="pt-3 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <span class="text-[11px] text-gray-400 font-medium self-start sm:self-center">Format File: .docx</span>
+        <div class="flex items-center space-x-2 w-full sm:w-auto">
+          <!-- Unduh SOP -->
+          <a href="{% static 'doc/SOP_Rekomendasi_TDG.docx' %}" download
+            class="flex-1 sm:flex-none inline-flex items-center justify-center space-x-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 px-3.5 py-2 rounded-lg text-xs font-semibold transition border border-gray-300">
+            <span>📄</span>
+            <span>Unduh SOP</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. SOP & Formulir Rekomendasi BBM Subsidi -->
+    <div
+      class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between">
+      <div>
+        <div class="flex items-start justify-between border-b border-gray-100 pb-4 mb-4">
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-10 h-10 bg-emerald-50 text-emerald-700 rounded-lg flex items-center justify-center font-bold text-lg border border-emerald-100">
+              ⛽
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-gray-800">SOP & Formulir BBM Subsidi</h3>
+              <span class="text-xs text-emerald-700 font-medium">Rekomendasi Pembelian BBM Bersubsidi</span>
+            </div>
+          </div>
+          <span class="bg-blue-50 text-blue-700 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">DOCX /
+            JPEG</span>
+        </div>
+
+        <div class="bg-slate-50 rounded-lg p-3.5 border border-slate-100 mb-4">
+          <h4 class="text-xs font-bold text-gray-700 mb-2 uppercase tracking-wide flex items-center space-x-1">
+            <span>📌</span>
+            <span>Persyaratan Berkas:</span>
+          </h4>
+          <ul class="text-xs text-gray-600 space-y-1.5 list-disc list-inside">
+            <li>FC KTP Pemohon / Pelaku Usaha Mikro</li>
+            <li>FC NIB / FC SKU (Surat Keterangan Usaha)</li>
+            <li>Surat / Dokumen spesifikasi alat / mesin</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tombol Aksi Unduh Terpisah -->
+      <div class="pt-3 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <span class="text-[11px] text-gray-400 font-medium self-start sm:self-center">Format File: .docx / .jpeg</span>
+        <div class="flex items-center space-x-2 w-full sm:w-auto">
+          <!-- Unduh SOP -->
+          <a href="{% static 'doc/SOP_Rekomendasi_BBM_Subsidi.docx' %}" download
+            class="flex-1 sm:flex-none inline-flex items-center justify-center space-x-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 px-3.5 py-2 rounded-lg text-xs font-semibold transition border border-gray-300">
+            <span>📄</span>
+            <span>Unduh SOP</span>
+          </a>
+          <!-- Unduh Formulir -->
+          <a href="{% static 'doc/Format_Permohonan_BBM_2026.docx' %}" download
+            class="flex-1 sm:flex-none inline-flex items-center justify-center space-x-1.5 bg-emerald-700 hover:bg-emerald-800 text-white px-3.5 py-2 rounded-lg text-xs font-semibold transition shadow-sm">
+            <span>📥</span>
+            <span>Unduh Formulir</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. SOP Perdagangan -->
+    <div
+      class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between">
+      <div>
+        <div class="flex items-start justify-between border-b border-gray-100 pb-4 mb-4">
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-10 h-10 bg-emerald-50 text-emerald-700 rounded-lg flex items-center justify-center font-bold text-lg border border-emerald-100">
+              🛍️
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-gray-800">SOP REKOMENDASI BBG AGEN</h3>
+              <span class="text-xs text-emerald-700 font-medium">Registrasi Bahan Bakar Gas AGEN</span>
+            </div>
+          </div>
+          <span
+            class="bg-blue-50 text-blue-700 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">DOCX</span>
+        </div>
+
+        <div class="bg-slate-50 rounded-lg p-3.5 border border-slate-100 mb-4">
+          <h4 class="text-xs font-bold text-gray-700 mb-2 uppercase tracking-wide flex items-center space-x-1">
+            <span>📌</span>
+            <span>Persyaratan Berkas:</span>
+          </h4>
+          <ul class="text-xs text-gray-600 space-y-1.5 list-disc list-inside">
+            <li>Fotokopi KTP</li>
+            <li>Fotokopi NIB</li>
+            <li>Fotokopi NPWP Perusahaan</li>
+            <li>Profil Perusahaan</li>
+            <li>Dokumen Pendukung Lainnya Sesuai Persyaratan</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tombol Aksi Unduh Terpisah -->
+      <div class="pt-3 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <span class="text-[11px] text-gray-400 font-medium self-start sm:self-center">Format File: .docx</span>
+        <div class="flex items-center space-x-2 w-full sm:w-auto">
+          <!-- Unduh SOP -->
+          <a href="{% static 'doc/SOP_REKOMENDASI_BBG_AGEN.docx' %}" download
+            class="flex-1 sm:flex-none inline-flex items-center justify-center space-x-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 px-3.5 py-2 rounded-lg text-xs font-semibold transition border border-gray-300">
+            <span>📄</span>
+            <span>Unduh SOP</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'admin_dashboard/base_admin.html' %}
+{% block title %}Kelola Admin & User - SIPHP-PENI Subang{% endblock %}
+{% block header_title %}Kelola Admin & User{% endblock %}
+
+{% block content %}
+<div class="mt-6">
+    <div class="flex items-center justify-between mb-4">
+        <h3 class="text-base font-bold text-gray-800">Daftar Pengguna Sistem</h3>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+        <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-gray-50/80 border-b border-gray-200/80 text-xs text-gray-500 uppercase tracking-wider">
+                        <th class="px-6 py-4 font-semibold">Username</th>
+                        <th class="px-6 py-4 font-semibold">Email</th>
+                        <th class="px-6 py-4 font-semibold">Role / Hak Akses</th>
+                        <th class="px-6 py-4 font-semibold">Status</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100/80">
+                    {% for u in users %}
+                    <tr class="hover:bg-emerald-50/30 transition-colors">
+                        <td class="px-6 py-4">
+                            <div class="font-bold text-gray-800 text-sm">{{ u.username }}</div>
+                            <div class="text-[11px] text-gray-400 mt-0.5">Bergabung: {{ u.date_joined|date:"d M Y" }}</div>
+                        </td>
+                        <td class="px-6 py-4 text-sm text-gray-600">
+                            {{ u.email|default:"<span class='text-gray-400 italic'>Belum disetel</span>"|safe }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {% if u.is_superuser %}
+                                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-bold bg-amber-100 text-amber-800 border border-amber-200/60">
+                                    Admin Utama
+                                </span>
+                            {% elif u.is_staff %}
+                                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200/60">
+                                    Admin Pasar
+                                </span>
+                            {% else %}
+                                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-bold bg-gray-100 text-gray-700 border border-gray-200/60">
+                                    Pengguna Biasa
+                                </span>
+                            {% endif %}
+                        </td>
+                        <td class="px-6 py-4">
+                            {% if u.is_active %}
+                                <span class="flex items-center gap-1.5 text-xs font-semibold text-emerald-600">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div> Aktif
+                                </span>
+                            {% else %}
+                                <span class="flex items-center gap-1.5 text-xs font-semibold text-rose-600">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-rose-500"></div> Nonaktif
+                                </span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="4" class="px-6 py-8 text-center text-sm text-gray-500">Belum ada pengguna terdaftar.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
