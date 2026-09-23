@@ -12,3 +12,9 @@ class BeritaForm(forms.ModelForm):
         if url and not url.startswith(("http://", "https://")):
             url = "https://" + url
         return url
+
+    def clean_gambar_url(self):
+        url = self.cleaned_data.get("gambar_url", "")
+        if url and not url.startswith(("http://", "https://")):
+            url = "https://" + url
+        return url
