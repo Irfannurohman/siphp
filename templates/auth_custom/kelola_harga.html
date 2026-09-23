@@ -40,6 +40,12 @@
         {% endfor %}
     {% endif %}
 
+    {% if pasar_aktif %}
+        <form id="formHapusPasar" method="POST" action="{% url 'hapus_pasar' pasar_aktif.id %}" onsubmit="return confirm('Yakin ingin menghapus pasar {{ pasar_aktif.nama_pasar }}? Semua data riwayat harga di pasar ini akan ikut terhapus.')" style="display:none;">
+            {% csrf_token %}
+        </form>
+    {% endif %}
+
     <!-- Form Input Harga -->
     <form method="POST" action="{% url 'harga_komoditas' %}" id="formKelolaHarga" class="space-y-6">
         {% csrf_token %}
@@ -61,14 +67,11 @@
                             {% endfor %}
                         </select>
                         {% if pasar_aktif %}
-                            <form method="POST" action="{% url 'hapus_pasar' pasar_aktif.id %}" onsubmit="return confirm('Yakin ingin menghapus pasar {{ pasar_aktif.nama_pasar }}? Semua data riwayat harga di pasar ini akan ikut terhapus.')" style="display:inline;">
-                                {% csrf_token %}
-                                <button type="submit"
-                                   class="px-3 py-2 bg-rose-50 hover:bg-rose-100 text-rose-600 border border-rose-200 font-bold rounded-lg transition text-xs whitespace-nowrap flex items-center gap-1"
-                                   title="Hapus Pasar Aktif">
-                                    🗑️ Hapus Pasar
-                                </button>
-                            </form>
+                            <button type="submit" form="formHapusPasar"
+                               class="px-3 py-2 bg-rose-50 hover:bg-rose-100 text-rose-600 border border-rose-200 font-bold rounded-lg transition text-xs whitespace-nowrap flex items-center gap-1"
+                               title="Hapus Pasar Aktif">
+                                🗑️ Hapus Pasar
+                            </button>
                         {% endif %}
                     </div>
                 </div>
